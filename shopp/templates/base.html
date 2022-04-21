@@ -1,0 +1,81 @@
+
+{% load static %}
+
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Shop Hub</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'home/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image: url({% static 'home/images//demo/backgrounds/bg2.png' %});">
+  <!-- ################################################################################################ -->
+  <div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+      <div class="fl_left">
+        <!-- ################################################################################################ -->
+
+        <!-- ################################################################################################ -->
+      </div>
+      <div class="fl_right">
+        <!-- ################################################################################################ -->
+        <ul class="nospace">
+          <li><a href="/"><i class="fas fa-home"></i></a></li>
+          <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
+          <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+          <li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+          <li id="searchform">
+            <div>
+              <form action="{% url 'search' %}" method="get">
+                <fieldset>
+                  <legend>Quick Search:</legend>
+                  <input type="text" placeholder="Enter search item" name="q">
+                  <button type="submit"><i class="fas fa-search"></i></button>
+                </fieldset>
+              </form>
+            </div>
+          </li>
+        </ul>
+        <!-- ################################################################################################ -->
+      </div>
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left">
+        <!-- ################################################################################################ -->
+        <h1><a href="/">KFC ONLINE</a></h1>
+        <!-- ################################################################################################ -->
+      </div>
+      <nav id="mainav" class="fl_right">
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+          <li class="active"><a href="/">Home</a></li>
+          {%  if itc > 0 %}
+          <li><a class="active" href="#">Cart  <i class="fa fa-shopping-cart" style="font-size:18px;color:red"></i>: {{itc}}</a>
+          {% else %}
+           <li><a class="active" href="#">Cart</a>
+             {% endif %}
+             <li><a class="active" href="#">Logout</a>
+           <li><a class="active" href="#">Login</a>
+          <li><a class="active" href="/accounts/reg">Signup</a>
+          </li>
+
+            <ul>
+      </nav>
+    </header>
+  </div>
+   </div>
+{% block content %}
+{% endblock %}
+</body>
+</html>
